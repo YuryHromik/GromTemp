@@ -13,7 +13,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: ...
+          resourceGroupName: grom88
           template: ./infrastructure/main.bicep
-          parameters: environment=dev resourcePostfix=...
+          parameters: environment=dev resourcePostfix=grom88
           failOnStdErr: false
