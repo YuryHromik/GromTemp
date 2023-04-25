@@ -5,7 +5,7 @@
 param environment string 
 param resourcePostfix string
 param location string = resourceGroup().location
-
+param planConfig object
 
 module storageAccount 'resources/storageAccount.bicep' = {
   name: 'storageAccount-deployment'
@@ -22,9 +22,6 @@ module appService 'resources/appService.bicep' = {
     environment: environment
     resourcePostfix: resourcePostfix
     location: location
-    planConfig:{
-      skuTier: 'Standard'
-      skuName: 'S2'
-    }
+    planConfig:planConfig
   }
 }
