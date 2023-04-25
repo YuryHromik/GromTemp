@@ -7,8 +7,8 @@
         },
         "planConfig":{
             "value": {
-                "skuTier": "Standard",
-                "skuName": "S2"
+                "skuTier": "Basic",
+                "skuName": "B1"
             }
           },
         "location": {
