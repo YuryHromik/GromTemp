@@ -17,3 +17,12 @@ jobs:
           template: ./infrastructure/main.bicep
           parameters: environment=dev resourcePostfix=grom88
           failOnStdErr: false
+
+      # - name: deploy
+      #   uses: azure/arm-deploy@v1
+      #   with:
+      #     subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+      #     resourceGroupName: grom88T
+      #     template: ./infrastructure/main.bicep
+      #     parameters: environment=test resourcePostfix=grom88T
+      #     failOnStdErr: false

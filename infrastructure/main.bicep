@@ -22,7 +22,9 @@ module appService 'resources/appService.bicep' = {
     environment: environment
     resourcePostfix: resourcePostfix
     location: location
-    skuTier: 'Standard'
-    skuName: 'S2'
+    planConfig:{
+      skuTier: 'Standard'
+      skuName: 'S2'
+    }
   }
 }
