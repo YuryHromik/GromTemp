@@ -1,6 +1,11 @@
+@allowed([
+  'dev'
+  'prod'
+])
 param environment string 
 param resourcePostfix string
 param location string = resourceGroup().location
+
 
 module storageAccount 'resources/storageAccount.bicep' = {
   name: 'storageAccount-deployment'
@@ -17,5 +22,7 @@ module appService 'resources/appService.bicep' = {
     environment: environment
     resourcePostfix: resourcePostfix
     location: location
+    skuTier: 'Standard'
+    skuName: 'S2'
   }
 }

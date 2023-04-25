@@ -1,10 +1,8 @@
-@allowed([
-  'dev'
-  'prod'
-])
 param environment string
 param resourcePostfix string
-param location string = resourceGroup().location
+param location string
+param skuTier string
+param skuName string
 
 resource appService 'Microsoft.Web/sites@2021-02-01' = {
   name: 'appservice-badadvisor-${environment}-${resourcePostfix}'
@@ -19,14 +17,12 @@ resource appService 'Microsoft.Web/sites@2021-02-01' = {
   }
 }
 
-
-
 resource plan 'Microsoft.Web/serverfarms@2021-02-01' = {
   name: 'plan-badadvisor-${environment}-${resourcePostfix}'
   location: location
   sku: {
-    tier: 'Standard'
-    name: 'S1'
+    tier: skuTier
+    name: skuName
   }
   kind: 'linux'
   properties: {
