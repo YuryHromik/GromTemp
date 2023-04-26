@@ -10,12 +10,12 @@
                 "skuTier": "Basic",
                 "skuName": "B1"
             }
-          },
+        },
         "location": {
             "value": "westus"
         },
         "resourcePostfix": {
             "value": "grom88"
-     } 
- }
+        } 
+    }
 }
